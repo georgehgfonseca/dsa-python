@@ -2,7 +2,7 @@ import itertools
 
 
 def imageLabeler(n, m, a):
-    for i in range(1, m + 1):
+    for i in range(1, m):
         print(list(itertools.combinations(a, i)))
     # assignments = []
     # curr = []
