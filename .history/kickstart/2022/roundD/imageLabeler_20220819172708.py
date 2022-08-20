@@ -2,6 +2,7 @@ def imageLabeler(n, m, a):
     a.sort()
     ans = 0
     for i in range(m - 1):
+        print(i, n - 1 - i)
         ans += a[n - 1 - i]
     ans += (a[(n - m + 1) // 2] + a[(n - m) // 2]) / 2
     return ans

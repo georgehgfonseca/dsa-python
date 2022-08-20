@@ -1,3 +1,6 @@
+import itertools
+
+
 def imageLabeler(n, m, a):
     a.sort()
     ans = 0
@@ -8,9 +11,9 @@ def imageLabeler(n, m, a):
 
 
 if __name__ == "__main__":
-    t = int(input())
+    t = 1  # int(input())
     for test_case in range(1, t + 1):
-        line1 = [int(x) for x in input().split(" ")]  # Number of regions and categories
-        line2 = [int(x) for x in input().split(" ")]  # Array of values
+        line1 = [int(x) for x in "3 2".split(" ")]  # Number of regions and categories
+        line2 = [int(x) for x in "11 24 10".split(" ")]  # Array of values
         res = imageLabeler(line1[0], line1[1], line2)
         print("Case #" + str(test_case) + ": " + str(res))
