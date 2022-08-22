@@ -95,7 +95,7 @@ if __name__ == "__main__":
         res = maximumGain(a, b, k)
         print("Case #" + str(test_case) + ": " + str(res))
 
-# file = open("ts2_input.txt", "r")
+# file = open("C:/Users/George/Downloads/test_data/test_set_2/ts2_input.txt", "r")
 # t = int(file.readline())
 # for test_case in range(1, t + 1):
 #     n = int(file.readline())
