@@ -1,8 +1,15 @@
-from typing import List
+from typing import List, Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         # runs in O(n)
         idxs = {}
         for i in range(len(nums)):
@@ -19,7 +26,10 @@ class Solution:
                     return [i, j]
 
 
-testCases = [([2, 7, 11, 15], 9), ([3, 2, 4], 6), ([3, 3], 6)]
+t1 = ([2, 7, 11, 15], 9)
+t2 = ([3, 2, 4], 6)
+t3 = ([3, 3], 6)
+testCases = [t1, t2, t3]
 s = Solution()
 for t in testCases:
     print(s.twoSum(t[0], t[1]))

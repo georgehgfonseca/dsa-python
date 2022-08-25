@@ -19,7 +19,10 @@ class Solution:
                     return [i, j]
 
 
-testCases = [([2, 7, 11, 15], 9), ([3, 2, 4], 6), ([3, 3], 6)]
+t1 = ([2, 7, 11, 15], 9)
+t2 = ([3, 2, 4], 6)
+t3 = ([3, 3], 6)
+testCases = [t1, t2, t3]
 s = Solution()
 for t in testCases:
     print(s.twoSum(t[0], t[1]))
