@@ -2,6 +2,7 @@ from typing import List
 
 
 class Solution:
+    # TODO
     def maxCoins(self, nums: List[int]) -> int:
         # dp[i][j] number of coins for ballon i bursted at j-th time
         dp = [[0 for j in range(len(nums))] for i in range(len(nums))]

@@ -17,20 +17,20 @@ class TreeNode:
 
 class Solution:
     def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
-        # convert to array (is it allowed?)
-        def toArray(head):
-            return [head.val] + toArray(head.next)
+        arr = []
+        while head:
+            arr.append(head.val)
+            head = head.next
 
-        arr = toArray(head)
+        def insertNode(arr):
+            if arr:
+                return TreeNode(
+                    arr[len(arr) // 2],
+                    insertNode(arr[: len(arr) // 2]),
+                    insertNode(arr[(len(arr) // 2) + 1 :]),
+                )
 
-        # find root element (mid element of input arr/list)
-        def insertInBST(root, val):
-            if root.val >= val:
-                root.left
-
-        currIdx = len(arr) // 2
-        rootVal = arr[currIdx]
-        root = TreeNode(rootVal)
+        return insertNode(arr)
 
 
 testCases = [ListNode(-10, ListNode(-3, ListNode(0, ListNode(5, ListNode(9)))))]
