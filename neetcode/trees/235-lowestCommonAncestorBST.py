@@ -9,6 +9,17 @@ class TreeNode:
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
+        # solution from neetcode
+        # WA for [6,2,8,0,4,7,9,null,null,3,5]
+        # cur = root
+        # while cur:
+        #     if p.val < cur.val and q.val < cur.val:
+        #         cur = cur.left
+        #     elif p.val > cur.val and q.val > cur.val:
+        #         cur = cur.left
+        #     else:
+        #         return cur
+            
         # enumerate the ancestors of p and q
         self.ancestors_p = list()
         def get_ancestors_p(root, p, curr_path):
@@ -18,8 +29,10 @@ class Solution:
                     for node in curr_path:
                         self.ancestors_p.insert(0, node)
                     return
-                get_ancestors_p(root.left, p, curr_path.copy())
-                get_ancestors_p(root.right, p, curr_path.copy())
+                if root.val < p.val:
+                    get_ancestors_p(root.right, p, curr_path.copy())
+                else:
+                    get_ancestors_p(root.left, p, curr_path.copy())
         
         self.ancestors_q = list()
         def get_ancestors_q(root, q, curr_path):
@@ -29,8 +42,10 @@ class Solution:
                     for node in curr_path:
                         self.ancestors_q.insert(0, node)
                     return
-                get_ancestors_q(root.left, q, curr_path.copy())
-                get_ancestors_q(root.right, q, curr_path.copy())
+                if root.val < q.val:
+                    get_ancestors_q(root.right, q, curr_path.copy())
+                else:
+                    get_ancestors_q(root.left, q, curr_path.copy())
         
         get_ancestors_p(root, p, [])
         get_ancestors_q(root, q, [])
