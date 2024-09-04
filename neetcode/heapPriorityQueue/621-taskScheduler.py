@@ -1,6 +1,6 @@
 from typing import List
 import heapq
-from collections import Counter
+from collections import Counter, deque
 
 class Solution:
     def leastInterval(self, tasks: List[str], n: int) -> int:
