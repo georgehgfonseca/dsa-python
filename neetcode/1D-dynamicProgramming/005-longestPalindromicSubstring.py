@@ -1,5 +1,6 @@
 from typing import List
 
+
 class Solution:
 
     def longestPalindrome(self, s: str) -> str:
@@ -17,7 +18,7 @@ class Solution:
             if offset * 2 + 1 > len(largestSubstr):
                 largestSubstr = s[i - offset : i + offset + 1]
 
-            if i+1 < len(s) and s[i+1] == s[i]:
+            if i + 1 < len(s) and s[i + 1] == s[i]:
                 # check for even palindromes
                 offsetEven = 1
                 while i - offsetEven >= 0 and i + 1 + offsetEven <= len(s) - 1:
@@ -29,7 +30,6 @@ class Solution:
                     largestSubstr = s[i - offsetEven : i + offsetEven + 2]
 
         return largestSubstr
-
 
         # O(n^3) brute-force approach
         # def isPalindrome(s):
@@ -50,23 +50,21 @@ class Solution:
         #             if largest < len(substr):
         #                 largest = len(substr)
         #                 largestSubstr = substr
-        
+
         # return largestSubstr
 
 
 testCases = [
-           "eabcb",
-           "ccc",
-           "cbbd"
-           "bb",
-           "babad",
-#           01234
-# i:        1
-# offset:   1
-# largest:  bab
+    "eabcb",
+    "ccc",
+    "cbbd" "bb",
+    "babad",
+    #           01234
+    # i:        1
+    # offset:   1
+    # largest:  bab
 ]
 
 s = Solution()
 for t in testCases:
     print(s.longestPalindrome(t))
-
