@@ -1,10 +1,7 @@
 from typing import List
 
-from collections import deque
-
 class Solution:
     def findItinerary(self, tickets: List[List[str]]) -> List[str]:
-        # TODO: had to look at the solution
         # sort tickets to ensure ordering
         tickets.sort()
 
@@ -12,17 +9,6 @@ class Solution:
         graph = {source: [] for source, sink in tickets}
         for (source, sink) in tickets:
             graph[source].append(sink)
-        
-
-        # find an eulerian path in the graph
-        def is_bridge_edge(graph, edge):
-            source, sink = edge
-            if sink not in graph:
-                return True
-            for neighbor in graph[sink]:
-                if graph[sink][neighbor] > 0:
-                    return False
-            return True
 
         # dfs
         initial_node = "JFK"
@@ -33,7 +19,7 @@ class Solution:
             if node not in graph:
                 return False
             
-            neighbors = graph[node].copy()
+            neighbors = list(graph[node])
             for i, neighbor in enumerate(neighbors):
                 graph[node].pop(i)
                 itinerary.append(neighbor)
