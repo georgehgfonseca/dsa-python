@@ -1,4 +1,4 @@
-import searchSort
+import algorithms.sorting.searchSort as searchSort
 from binaryTree import TreeNode
 from graph import Graph
 from weightedGraph import WeightedGraph
