@@ -1,0 +1,2 @@
+# ... a sligthly complicated description that asks to find the path with minimum transit time from place a to b
+# follow up: how to take into account the maximum travel distance, assuming that it is an electric vehicle
