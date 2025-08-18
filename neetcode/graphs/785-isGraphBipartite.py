@@ -1,24 +1,24 @@
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
-        visitedSet = dict()
+        visitedColor = dict()
         self.bipartite = True
 
-        def dfs(node, set):
+        def dfs(node, color):
             if not self.bipartite:
                 return 
-            if node in visitedSet:
-                if visitedSet[node] != set:
+            if node in visitedColor:
+                if visitedColor[node] != color:
                     self.bipartite = False
                 return
 
-            visitedSet[node] = set
+            visitedColor[node] = color
             for neighbor in graph[node]:
-                if set == 1:
+                if color == 1:
                     dfs(neighbor, 2)
                 else:
                     dfs(neighbor, 1)
         
         for node in range(len(graph)):
-            if node not in visitedSet and self.bipartite:
+            if node not in visitedColor and self.bipartite:
                 dfs(node, 1)
         return self.bipartite
