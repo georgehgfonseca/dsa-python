@@ -10,7 +10,7 @@ class Solution:
             if nums[i] == 0:
                 return False
             i += nums[i]
-            if i == len(nums) - 1:
+            if i >= len(nums) - 1:
                 return True
         return False
 
