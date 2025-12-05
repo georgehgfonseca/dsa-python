@@ -10,7 +10,7 @@ class Solution:
         @cache
         def dfs(i, j):
             out_of_bounds = i >= len(matrix) or j >= len(matrix[i])
-            if out_of_bounds or matrix[i][j] == 0:
+            if out_of_bounds or matrix[i][j] == "0":
                 return 0
 
             return 1 + min(dfs(i + 1, j), dfs(i, j + 1), dfs(i + 1, j + 1))
@@ -24,10 +24,18 @@ class Solution:
 
 
 testCases = [
-    ([[0, 1, 1, 1], [0, 1, 1, 1], [0, 1, 1, 1], [0, 1, 0, 0]], 9),
-    ([[0]], 0),
-    ([[1]], 1),
-    ([[1, 0], [0, 1]], 1),
+    (
+        [
+            ["0", "1", "1", "1"],
+            ["0", "1", "1", "1"],
+            ["0", "1", "1", "1"],
+            ["0", "1", "0", "0"],
+        ],
+        9,
+    ),
+    ([["0"]], 0),
+    ([["1"]], 1),
+    ([["1", "0"], ["0", "1"]], 1),
 ]
 s = Solution()
 for t in testCases:
