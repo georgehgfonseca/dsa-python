@@ -40,9 +40,9 @@ class ElevatorController():
         Move each elavator one unit of time (either top, down, or stopped - allowing pickup and dropoff)
         """
         for i, elevator in enumerate(self.elevators):
-            if len(elevator.floorRequests) > 0:
+            if len(elevator.floorRequests[elevator.floor]) > 0:
                 # All requests for that floor were resolved
-                self.elevators[i].requestCount -= len(elevator.floorRequests)
+                self.elevators[i].requestCount -= len(elevator.floorRequests[elevator.floor])
                 self.elevators[i].floorRequests[elevator.floor] = set()
                 continue
 
@@ -50,14 +50,13 @@ class ElevatorController():
                 if elevator.floor < self.maxFloor:
                     self.elevators[i].floor += 1
                 else:
-                    self.direction = Direction.NONE
+                    self.elevators[i].direction = Direction.NONE
 
             if elevator.direction == Direction.DOWN:
                 if elevator.floor > 1:
                     self.elevators[i].floor -= 1
                 else:
-                    self.direction = Direction.NONE
-
+                    self.elevators[i].direction = Direction.NONE
         
     
     def acceptRequest(self, request: Request) -> int:
@@ -100,8 +99,8 @@ class ElevatorController():
         self.elevators[index].floorRequests[request.floor].add(request)
         self.elevators[index].requestCount += 1
 
-        if self.elevators[index].direction == Direction.NONE:
-            self.elevators[index].direction = request.direction
+        if self.elevators[index].direction == Direction.NONE and self.elevators[index].floor != request.floor:
+            self.elevators[index].direction = Direction.UP if self.elevators[index].floor < request.floor else Direction.DOWN
 
 
 class Elevator():
@@ -115,7 +114,7 @@ class Elevator():
         return f"floor: {self.floor} - direction: {self.direction}\nrequests: {self.floorRequests}\n"
 
 
-e = ElevatorController(5, 10)
+e = ElevatorController(2, 10)
 e.acceptRequest(Request(1, Direction.UP, RequestType.PICKUP))
 print(f"{'='*20}\n{e}")
 e.step()
