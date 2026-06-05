@@ -10,8 +10,13 @@ class Solution:
         dist = {node: float("inf") for node in graph}
         dist[src] = 0
         queue = [(0, src)]
+        closed = set()
         while queue:
             (_, node) = heapq.heappop(queue)
+            if node in closed:
+                continue
+            closed.add(node)
+
             for nei in graph[node]:
                 if dist[nei] > dist[node] + graph[node][nei]:
                     dist[nei] = dist[node] + graph[node][nei]
