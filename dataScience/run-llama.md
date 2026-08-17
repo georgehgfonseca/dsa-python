@@ -54,7 +54,7 @@ completion = client.chat.completions.create(
 print(completion.choices[0].message.content)
 
 # Run gemma (multimodal model):
-export HF_TOKEN="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"
+export HF_TOKEN="secret"
 cd build/bin
  wget https://github.com/bebechien/gemma/blob/main/surprise.png?raw=true -O ~/Downloads/surprise.png
 ./llama-gemma3-cli -hf google/gemma-3-4b-it-qat-q4_0-gguf -p "Describe this image." --image ~/Downloads/surprise.png
