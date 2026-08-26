@@ -6,4 +6,4 @@ Ideias de estudo:
 
 - Automated integration with Jira to implement tickets
 
-- A2A ecosystem - e.g. restaurant/place exposes an agent to tell about availability (via MCP to database/calendar), people's agent access calendar, payment via pix qr code
+- A2A ecosystem - e.g. restaurant/place exposes an agent to tell about availability (via MCP to database/calendar), people's agent access calendar, payment via pix qr code. Integration with delivery/ride apps, e.g. "I want to order sushi tonight" browses nearby sushi places (iFood or google maps), get data from A2A and returns.
