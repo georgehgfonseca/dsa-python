@@ -13,3 +13,6 @@ Ideias de estudo:
 
 # Flight/stay agent
 - Have a personal AI assistant that run queries like "I want to book a round-trip flight to Cancun". It fetches the options from google/other source via A2A/MCP, evaluates the options (w.r.t. cost, dates, stops, etc) ask questions if needed (e.g. what is the date range?) and returns the top 3 options based on the parameters with a score (via AI/heuristic evaluation)
+
+# Political compatibility ranking
+- AI agent that gathers data from public votings in congress and matches the compatibility based on the user's query/settings. E.g. "I'm against abortion, and preffer a lean government with fewer taxes and services" -> The best matches are "Politician A - 0.98", "Politician B - 0.95"
