@@ -16,3 +16,9 @@ Ideias de estudo:
 
 # Political compatibility ranking
 - AI agent that gathers data from public votings in congress and matches the compatibility based on the user's query/settings. E.g. "I'm against abortion, and preffer a lean government with fewer taxes and services" -> The best matches are "Politician A - 0.98", "Politician B - 0.95"
+
+# Knowledge graph for organizational data (public/private?)
+- Create a knowledge layer based on the organization's documents and an agent to consume this data (using GraphRAG, perhaps?)
+
+# Agent/skill to fill in documents
+- Have a set of personal information available. The agent should be able to fill in word documents and/or web forms based on the given info.
