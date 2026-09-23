@@ -22,3 +22,5 @@ Ideias de estudo:
 
 # Agent/skill to fill in documents
 - Have a set of personal information available. The agent should be able to fill in word documents and/or web forms based on the given info.
+
+# Agent that plays games making decisions with Jev (eg. Chess)
